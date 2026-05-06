@@ -172,6 +172,8 @@ a {
   font-weight: 600;
   padding: 8px 14px !important;
   position: relative;
+  min-width: 82px;
+  text-align: center;
 }
 
 .nav-link:hover,
@@ -970,7 +972,7 @@ a {
       rgba(15, 81, 50, 0.35) 100%
     ),
 
-    url("../../hero-background.jpg") 50% 39% / 50% no-repeat;
+    url("../../background-study.jpg") 50% 39% / cover no-repeat;
 }
 
 .guide-panel {
