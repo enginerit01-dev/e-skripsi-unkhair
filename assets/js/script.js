@@ -15,7 +15,6 @@ const CLR = {
        name     : nama fakultas (string)
        prodi    : nama-nama program studi (array string)
        bar      : jumlah per prodi per status (object of arrays)
-       semester : data tren per semester (object with labels + arrays)
        tahun    : data tren per tahun (object with labels + arrays)
   ══════════════════════════════════════════════ */
 const faculties = [
@@ -27,20 +26,6 @@ const faculties = [
       proposal: [18, 11, 8, 6],
       hasil: [12, 8, 5, 4],
       sidang: [7, 5, 3, 2],
-    },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [20, 25, 28, 31, 30, 31],
-      proposal: [12, 14, 16, 18, 17, 18],
-      hasil: [7, 9, 11, 12, 11, 12],
-      sidang: [4, 5, 6, 7, 6, 7],
     },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
@@ -59,20 +44,6 @@ const faculties = [
       hasil: [10, 7, 5],
       sidang: [6, 4, 3],
     },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [16, 19, 21, 24, 23, 24],
-      proposal: [10, 12, 14, 16, 15, 16],
-      hasil: [6, 7, 8, 10, 9, 10],
-      sidang: [3, 4, 5, 6, 5, 6],
-    },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
       aktif: [12, 18, 22, 24, 26],
@@ -89,20 +60,6 @@ const faculties = [
       proposal: [14, 10, 7],
       hasil: [9, 6, 4],
       sidang: [5, 4, 2],
-    },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [13, 16, 18, 21, 20, 21],
-      proposal: [8, 10, 12, 14, 13, 14],
-      hasil: [5, 6, 7, 9, 8, 9],
-      sidang: [2, 3, 4, 5, 4, 5],
     },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
@@ -121,20 +78,6 @@ const faculties = [
       hasil: [8, 5],
       sidang: [5, 3],
     },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [11, 13, 15, 18, 17, 18],
-      proposal: [7, 9, 10, 13, 12, 13],
-      hasil: [4, 5, 6, 8, 7, 8],
-      sidang: [2, 3, 4, 5, 4, 5],
-    },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
       aktif: [8, 12, 16, 18, 19],
@@ -151,20 +94,6 @@ const faculties = [
       proposal: [10, 8, 5],
       hasil: [7, 5, 3],
       sidang: [4, 2, 2],
-    },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [10, 13, 15, 17, 16, 17],
-      proposal: [6, 8, 9, 10, 9, 10],
-      hasil: [3, 5, 6, 7, 6, 7],
-      sidang: [2, 2, 3, 4, 3, 4],
     },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
@@ -183,20 +112,6 @@ const faculties = [
       hasil: [7, 4, 3],
       sidang: [4, 2, 2],
     },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [8, 10, 11, 13, 12, 13],
-      proposal: [5, 7, 8, 9, 8, 9],
-      hasil: [3, 4, 5, 7, 6, 7],
-      sidang: [2, 2, 3, 4, 3, 4],
-    },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
       aktif: [6, 9, 11, 13, 14],
@@ -213,20 +128,6 @@ const faculties = [
       proposal: [8, 6],
       hasil: [6, 4],
       sidang: [4, 3],
-    },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [6, 8, 9, 11, 10, 11],
-      proposal: [4, 5, 6, 8, 7, 8],
-      hasil: [2, 4, 5, 6, 5, 6],
-      sidang: [1, 2, 3, 4, 3, 4],
     },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
@@ -245,20 +146,6 @@ const faculties = [
       hasil: [4, 3],
       sidang: [3, 2],
     },
-    semester: {
-      labels: [
-        "Ganjil 22",
-        "Genap 22",
-        "Ganjil 23",
-        "Genap 23",
-        "Ganjil 24",
-        "Genap 24",
-      ],
-      aktif: [4, 5, 6, 7, 6, 7],
-      proposal: [3, 3, 4, 5, 4, 5],
-      hasil: [2, 3, 3, 4, 3, 4],
-      sidang: [1, 2, 2, 3, 2, 3],
-    },
     tahun: {
       labels: ["2021", "2022", "2023", "2024", "2025"],
       aktif: [3, 5, 6, 7, 8],
@@ -273,7 +160,6 @@ const faculties = [
      STATE
   ══════════════════════════════════════════════ */
 let activeFac = 0;
-let activePeriod = "semester";
 let barInst = null;
 let lineInst = null;
 let resizeTimer = null;
@@ -375,7 +261,7 @@ function renderBar() {
   ══════════════════════════════════════════════ */
 function renderLine() {
   const fac = faculties[activeFac];
-  const src = fac[activePeriod];
+  const src = fac.tahun;
   const dashes = [[], [6, 3], [3, 3], [8, 3, 2, 3]];
   const keys = ["aktif", "proposal", "hasil", "sidang"];
   const labels = {
@@ -438,23 +324,18 @@ function scheduleChartResize() {
   resizeTimer = setTimeout(resizeCharts, 160);
 }
 
-/* ══════════════════════════════════════════════
-     TOMBOL TOGGLE PERIODE (Semester / Tahun)
-  ══════════════════════════════════════════════ */
-document.querySelectorAll(".p-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    activePeriod = btn.dataset.p;
-    document
-      .querySelectorAll(".p-btn")
-      .forEach((b) => b.classList.toggle("active", b === btn));
-    renderLine();
-  });
-});
+function updateNavbarState() {
+  const navbar = document.querySelector(".navbar-custom");
+  if (!navbar) return;
+  navbar.classList.toggle("is-scrolled", window.scrollY > 8);
+}
 
 /* ══════════════════════════════════════════════
      INIT
   ══════════════════════════════════════════════ */
 buildFacBtns();
 renderAll();
+updateNavbarState();
+window.addEventListener("scroll", updateNavbarState, { passive: true });
 window.addEventListener("resize", scheduleChartResize);
 window.addEventListener("orientationchange", scheduleChartResize);
