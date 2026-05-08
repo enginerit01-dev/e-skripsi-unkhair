@@ -185,8 +185,8 @@ a {
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
+  left: 0;
+  right: 0;
   bottom: 3px;
   height: 2px;
   border-radius: 999px;
@@ -1076,10 +1076,12 @@ a {
   }
 
   .nav-link {
-    display: inline-block;
+    display: block;
+    width: 100%;
     margin: 2px 0;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    text-align: left;
   }
 
   .nav-link::after {
