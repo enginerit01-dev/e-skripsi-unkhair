@@ -339,3 +339,43 @@ updateNavbarState();
 window.addEventListener("scroll", updateNavbarState, { passive: true });
 window.addEventListener("resize", scheduleChartResize);
 window.addEventListener("orientationchange", scheduleChartResize);
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", function () {
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((item) => item.classList.remove("active"));
+
+    this.classList.add("active");
+  });
+});
+
+// 1. Fungsi untuk menutup menu
+function closeNavbar() {
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+
+  // Pastikan menu sedang terbuka sebelum mencoba menutup
+  if (navbarCollapse.classList.contains("show")) {
+    const bsCollapse =
+      bootstrap.Collapse.getInstance(navbarCollapse) ||
+      new bootstrap.Collapse(navbarCollapse);
+    bsCollapse.hide();
+  }
+}
+
+// 2. Deteksi Scroll
+window.addEventListener("scroll", closeNavbar);
+
+// 3. Deteksi Klik di Luar Menu
+document.addEventListener("click", function (event) {
+  const navbar = document.querySelector(".navbar"); // Ganti dengan class pembungkus nav beneran jika perlu
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+
+  // Jika yang diklik BUKAN bagian dari navbar DAN menu sedang terbuka
+  if (
+    !navbar.contains(event.target) &&
+    navbarCollapse.classList.contains("show")
+  ) {
+    closeNavbar();
+  }
+});
