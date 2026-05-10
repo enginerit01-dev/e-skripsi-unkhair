@@ -364,7 +364,7 @@ function closeNavbar() {
 }
 
 // 2. Deteksi Scroll
-window.addEventListener("scroll", closeNavbar);
+// window.addEventListener("scroll", closeNavbar);
 
 // 3. Deteksi Klik di Luar Menu
 document.addEventListener("click", function (event) {
